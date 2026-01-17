@@ -1,8 +1,11 @@
 import React from 'react'
+import Logo from '../shared/Logo'
 
 function RootLayout() {
     return (
-        <div>RootLayout</div>
+        <div>
+            <Logo />
+        </div>
     )
 }
 
