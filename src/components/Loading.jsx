@@ -4,34 +4,28 @@ import Logo from '../shared/Logo'
 
 function Loading({ isComplete = false }) {
     return (
-        <div className='fixed inset-0 z-[9999] overflow-hidden'>
-            {/* left panel - Slides to left */}
+        <div className='fixed inset-0 z-[9999] overflow-hidden bg-slate-950'>
+            {/* Left Panel */}
             <motion.div
                 initial={{ x: 0 }}
                 animate={isComplete ? { x: '-100%' } : { x: 0 }}
                 transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-                className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-violet-950/10 via-violet-950 to-violet-950/20"
+                className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950/40"
             >
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-transparent" />
-
-                {/* Glow effect on edge */}
-                {/* <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-violet-400/50 to-transparent" /> */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-transparent" />
             </motion.div>
 
-            {/* Right Panel - Slides to right */}
+            {/* Right Panel */}
             <motion.div
                 initial={{ x: 0 }}
                 animate={isComplete ? { x: '100%' } : { x: 0 }}
                 transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-                className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-violet-950/10 via-violet-950 to-violet-950/20"
+                className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-slate-950 via-slate-900 to-cyan-950/40"
             >
-                <div className="absolute inset-0 bg-gradient-to-bl from-violet-500/10 to-transparent" />
-
-                {/* Glow effect on edge */}
-                {/* <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-violet-400/50 to-transparent" /> */}
+                <div className="absolute inset-0 bg-gradient-to-bl from-cyan-400/10 to-transparent" />
             </motion.div>
 
-            {/* Content - Centered on both panels */}
+            {/* Center Content */}
             <motion.div
                 initial={{ opacity: 1 }}
                 animate={isComplete ? { opacity: 0 } : { opacity: 1 }}
@@ -39,14 +33,14 @@ function Loading({ isComplete = false }) {
                 className="absolute inset-0 flex items-center justify-center z-10"
             >
                 <div className="flex flex-col items-center gap-8">
-                    {/* Name with CSS Animation */}
+                    {/* Logo */}
                     <div className="name-container">
                         <h1 className="text-6xl md:text-8xl font-black tracking-wider text-gradient">
                             <Logo />
                         </h1>
                     </div>
 
-                    {/* Progress Dots */}
+                    {/* Loading Dots */}
                     <div className="flex gap-2">
                         {[0, 1, 2].map((i) => (
                             <div
@@ -59,7 +53,7 @@ function Loading({ isComplete = false }) {
                 </div>
             </motion.div>
 
-            {/* Particle Background */}
+            {/* Particles */}
             <div className="particles">
                 {[...Array(15)].map((_, i) => (
                     <div
@@ -74,69 +68,52 @@ function Loading({ isComplete = false }) {
                 ))}
             </div>
 
-            {/* style for Loading Page */}
+            {/* Styles */}
             <style jsx>{`
-                    /* Name Gradient Animation */
-                    .text-gradient {
+                .text-gradient {
                     background: linear-gradient(
                         135deg,
-                        #a78bfa 0%,
-                        #8b2fed 25%,
-                    #ae71f0 50%,
-                        #8b2fed 75%,
-                        #a78bfa 100%
+                        #22d3ee 0%,
+                        #0ea5e9 25%,
+                        #38bdf8 50%,
+                        #0ea5e9 75%,
+                        #22d3ee 100%
                     );
                     background-size: 200% 200%;
                     background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     animation: gradientShift 3s ease infinite;
-                    text-shadow: 0 0 40px rgba(167, 139, 250, 0.4);
-                    }
+                    text-shadow: 0 0 40px rgba(56, 189, 248, 0.35);
+                }
 
-                    @keyframes gradientShift {
+                @keyframes gradientShift {
                     0%, 100% { background-position: 0% 50%; }
                     50% { background-position: 100% 50%; }
-                    }
+                }
 
-                    /* Name Glow Pulse */
-                    .name-container {
+                .name-container {
                     animation: glowPulse 2s ease-in-out infinite;
-                    }
+                }
 
-                    @keyframes glowPulse {
+                @keyframes glowPulse {
                     0%, 100% {
-                        filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.3));
+                        filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.3));
                     }
                     50% {
-                        filter: drop-shadow(0 0 40px rgba(167, 139, 250, 0.6));
+                        filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.6));
                     }
-                    }
+                }
 
-                    /* Spinner */
-                    .spinner {
-                    width: 40px;
-                    height: 40px;
-                    border: 3px solid rgba(167, 139, 250, 0.2);
-                    border-top-color: #a78bfa;
-                    border-radius: 50%;
-                    animation: spin 1s linear infinite;
-                    }
-
-                    @keyframes spin {
-                    to { transform: rotate(360deg); }
-                    }
-
-                    /* Animated Dots */
-                    .dot {
+                .dot {
                     width: 8px;
                     height: 8px;
                     border-radius: 50%;
-                    background: linear-gradient(135deg, #a78bfa, #c084fc);
+                    background: linear-gradient(135deg, #22d3ee, #38bdf8);
                     animation: dotPulse 1.5s ease-in-out infinite;
-                    }
+                }
 
-                    @keyframes dotPulse {
+                @keyframes dotPulse {
                     0%, 100% {
                         transform: scale(1);
                         opacity: 0.5;
@@ -145,48 +122,42 @@ function Loading({ isComplete = false }) {
                         transform: scale(1.5);
                         opacity: 1;
                     }
-                    }
+                }
 
-                    /* Floating Particles */
-                    .particles {
+                .particles {
                     position: absolute;
                     inset: 0;
                     overflow: hidden;
                     pointer-events: none;
-                    }
+                }
 
-                    .particle {
+                .particle {
                     position: absolute;
                     width: 4px;
                     height: 4px;
-                    background: rgba(167, 139, 250, 0.6);
+                    background: rgba(56, 189, 248, 0.6);
                     border-radius: 50%;
                     animation: particleFloat linear infinite;
-                    }
+                }
 
-                    @keyframes particleFloat {
+                @keyframes particleFloat {
                     0% {
                         transform: translateY(100vh) scale(0);
                         opacity: 0;
                     }
-                    10% {
-                        opacity: 1;
-                    }
-                    90% {
-                        opacity: 1;
-                    }
+                    10% { opacity: 1; }
+                    90% { opacity: 1; }
                     100% {
                         transform: translateY(-100vh) scale(1);
                         opacity: 0;
                     }
-                    }
+                }
 
-                    /* Smooth transitions */
-                    * {
+                * {
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
-                    }
-                `}</style>
+                }
+            `}</style>
         </div>
     )
 }
