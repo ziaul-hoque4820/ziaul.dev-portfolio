@@ -69,7 +69,7 @@ function Loading({ isComplete = false }) {
             </div>
 
             {/* Styles */}
-            <style jsx>{`
+            <style>{`
                 .text-gradient {
                     background: linear-gradient(
                         135deg,
