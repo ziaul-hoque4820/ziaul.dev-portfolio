@@ -126,7 +126,51 @@ const Banner = () => {
                 </motion.div>
             </motion.div>
 
-            
+            {/* Image Side with Interactive Effects */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative group"
+            >
+                {/* Background Glow Effect */}
+                <div className="absolute -inset-4 bg-cyan-500/20 rounded-full blur-3xl group-hover:bg-cyan-500/30 transition-all duration-500 animate-pulse" />
+
+                {/* Animated Rings */}
+                <div className="absolute inset-0 -z-10">
+                    <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-[-20px] rounded-full border-2 border-dashed border-cyan-500/20"
+                    />
+                    <motion.div
+                        animate={{ rotate: -360 }}
+                        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-[-40px] rounded-full border border-cyan-500/10"
+                    />
+                </div>
+
+                {/* Profile Image Container */}
+                <div className="w-64 h-64 md:w-80 md:h-80 xl:w-96 xl:h-96 rounded-full p-2 bg-gradient-to-b from-cyan-500/50 to-transparent shadow-[0_0_50px_rgba(34,211,238,0.2)]">
+                    <img
+                        src={bannerImg || "https://i.ibb.co/yKJ4N7v/Profile.jpg"}
+                        alt="Ziaul"
+                        className="rounded-full w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500 border-4 border-slate-900"
+                    />
+                </div>
+
+                {/* Floating Contact Badge */}
+                <motion.a
+                    href="#contacts"
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -bottom-2 -right-2 md:bottom-4 md:right-4 btn bg-slate-900 border border-cyan-500/50 hover:border-cyan-400 text-cyan-400 rounded-2xl shadow-xl backdrop-blur-md px-6 py-2 flex items-center gap-2 group overflow-hidden"
+                >
+                    <div className="absolute inset-0 bg-cyan-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                    <HiOutlineMail size={20} className="relative z-10" />
+                    <span className="relative z-10 font-bold">Hire Me</span>
+                </motion.a>
+            </motion.div>
         </div>
     );
 };
