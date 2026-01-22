@@ -13,12 +13,12 @@ function RootLayout() {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setLoadingComplete(true); // Trigger curtain animation
+            setLoadingComplete(true);
 
             // Remove loader after animation completes
             setTimeout(() => {
                 setInitialLoading(false);
-            }, 700); // Wait for 1s curtain animation
+            }, 700); 
         }, 1500);
 
         return () => clearTimeout(timer);
@@ -51,7 +51,7 @@ function RootLayout() {
                     <header className='sticky backdrop-blur-xl top-0 z-500'>
                         <Navbar />
                     </header>
-                    <main className='min-h-[calc(100vh-65px)] max-w-7xl mx-auto my-6 sm:my-8 md:my-10 lg:my-12 px-5 sm:px-8 xl:px-0 text-sm md:text-base overflow-hidden'>
+                    <main className='py-15 min-h-[calc(100vh-65px)] max-w-7xl mx-auto  px-5 sm:px-8 xl:px-0 text-sm md:text-base overflow-hidden'>
                         <Outlet />
                     </main>
                     <Footer />
