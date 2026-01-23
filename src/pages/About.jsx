@@ -8,18 +8,19 @@ import SectionTitle from "../shared/SectionTitle";
 
 const aboutData = [
     {
-        title: "Programming Journey",
+        title: "Accounting to FinTech Journey",
         description:
-            "My programming journey began after I got admitted to honors. Though I started as a fresher, I was lucky to have guidance from my brother. What started as curiosity soon became passion, I enjoy crafting clean UI and learning something new.",
+            "I completed my BBA in Accounting from National University and gained one year of audit experience from ICAB, working with both local and multinational companies. This exposure inspired me to bridge accounting knowledge with technology and explore FinTech solutions.",
         icon: <MdComputer size={25} />,
     },
     {
-        title: "Education & Creativity",
+        title: "Web Engineering & Vision",
         description:
-            "I’m studying BBA in Accounting at National University of Bangladesh. Alongside studies, I have always loved design, teamwork, sports, arts and crafts. These combine my analytical side with my imagination.",
+            "I started programming during my undergraduate years and gradually chose web engineering as my career path. With hands-on experience in MERN stack, I aim to build FinTech products where accounting expertise and audit insights add real business value.",
         icon: <PiStudentBold size={25} />,
     },
 ];
+
 
 const About = () => {
     return (
@@ -46,7 +47,7 @@ const About = () => {
                     <motion.a
                         href="Elora_Yasmin_CV.pdf"
                         download
-                        animate={{ y: [0, -15, 0] }}
+                        animate={{ y: [0, -25, 0] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                         className="absolute -top-6 -right-6 z-20 btn border-0 bg-gradient-to-r from-cyan-600 to-cyan-500 rounded-full shadow-lg shadow-cyan-500/40 text-slate-950 font-bold whitespace-nowrap transition-all duration-300 flex items-center gap-2 px-6 py-3 hover:scale-105 active:scale-95"
                     >
@@ -81,11 +82,15 @@ const About = () => {
                         viewport={{ once: true }}
                         className="text-slate-400 md:text-lg leading-relaxed text-center lg:text-left"
                     >
-                        I’m a <span className="text-cyan-400 font-medium">Frontend Developer</span> who loves turning ideas into clean,
-                        responsive, and user-focused web experiences. I specialize in
-                        crafting modern interfaces using <span className="text-cyan-400 font-medium">React</span> and the <span className="text-cyan-400 font-medium">MERN stack</span>,
-                        focusing on performance and scalability.
+                        I’m a <span className="text-cyan-400 font-medium">Web Engineer</span> with a strong background in
+                        <span className="text-cyan-400 font-medium"> Accounting</span> and
+                        <span className="text-cyan-400 font-medium"> audit</span>, experienced through ICAB. I build
+                        scalable, user-focused applications using
+                        <span className="text-cyan-400 font-medium"> React</span> and the
+                        <span className="text-cyan-400 font-medium"> MERN stack</span>, aiming to create impactful
+                        <span className="text-cyan-400 font-medium"> FinTech solutions</span>.
                     </motion.p>
+
 
                     {/* Info Cards */}
                     <div className="grid md:grid-cols-2 gap-6">
@@ -121,7 +126,7 @@ const About = () => {
                     {/* Mobile CV Button */}
                     <div className="flex lg:hidden justify-center pt-4">
                         <motion.a
-                            href="Elora_Yasmin_CV.pdf"
+                            href="#"
                             download
                             className="btn border-0 bg-gradient-to-r from-cyan-600 to-cyan-500 rounded-full shadow-lg shadow-cyan-500/40 text-slate-950 font-bold px-10 py-4 flex items-center gap-2 hover:scale-105 active:scale-95 transition-transform"
                         >

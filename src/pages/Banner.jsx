@@ -80,10 +80,15 @@ const Banner = () => {
                     transition={{ delay: 0.6 }}
                     className="text-slate-400 text-base xl:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 xl:pb-4"
                 >
-                    I am a Frontend Developer who loves transforming ideas into clean,
-                    responsive, and user-focused web experiences. I enjoy crafting modern
-                    interfaces with <span className="text-cyan-400 font-medium">React</span> and the <span className="text-cyan-400 font-medium">MERN stack</span>. And also exploring <span className="text-cyan-400 font-medium">Next.js</span>
+                    I’m a <span className="text-cyan-400 font-medium">Web Engineer</span> with a foundation in
+                    <span className="text-cyan-400 font-medium"> Accounting</span> and
+                    <span className="text-cyan-400 font-medium"> audit</span>, focused on building clean, scalable,
+                    and user-centric web applications. I work with
+                    <span className="text-cyan-400 font-medium"> React</span>, the
+                    <span className="text-cyan-400 font-medium"> MERN stack</span>, and explore
+                    <span className="text-cyan-400 font-medium"> Next.js</span> for modern FinTech solutions.
                 </motion.p>
+
 
                 {/* Action Buttons */}
                 <motion.div
