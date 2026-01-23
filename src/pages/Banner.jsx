@@ -10,15 +10,15 @@ import { BsGithub } from "react-icons/bs";
 
 const socials = [
     {
-        href: "https://www.linkedin.com/in/elora-yasmin",
+        href: "https://www.linkedin.com/in/ziaul-hoque-patwary-a0a546324/",
         icon: FaLinkedin,
     },
     {
-        href: "https://www.facebook.com/elora.yasmin.21",
+        href: "https://www.facebook.com/profile.php?id=61581156689224",
         icon: FaFacebook,
     },
     {
-        href: "https://github.com/Elora21y",
+        href: "https://github.com/ziaul-hoque4820",
         icon: BsGithub,
     },
 ];
@@ -153,7 +153,7 @@ const Banner = () => {
                 {/* Profile Image Container */}
                 <div className="w-64 h-64 md:w-80 md:h-80 xl:w-96 xl:h-96 rounded-full p-2 bg-gradient-to-b from-cyan-500/50 to-transparent shadow-[0_0_50px_rgba(34,211,238,0.2)]">
                     <img
-                        src={bannerImg || "https://i.ibb.co/yKJ4N7v/Profile.jpg"}
+                        src={bannerImg || "https://i.postimg.cc/B6m09Vs0/linkdin-profile-photo.jpg"}
                         alt="Ziaul"
                         className="rounded-full w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500 border-4 border-slate-900"
                     />
