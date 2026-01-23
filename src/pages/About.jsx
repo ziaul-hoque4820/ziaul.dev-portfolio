@@ -66,7 +66,70 @@ const About = () => {
                     </div>
                 </motion.div>
 
-                
+                {/* Content Section */}
+                <div className="space-y-8">
+
+                    {/* Desktop Only Title */}
+                    <div className="hidden lg:block">
+                        <SectionTitle title={"About Me"} />
+                    </div>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
+                        className="text-slate-400 md:text-lg leading-relaxed text-center lg:text-left"
+                    >
+                        I’m a <span className="text-cyan-400 font-medium">Frontend Developer</span> who loves turning ideas into clean,
+                        responsive, and user-focused web experiences. I specialize in
+                        crafting modern interfaces using <span className="text-cyan-400 font-medium">React</span> and the <span className="text-cyan-400 font-medium">MERN stack</span>,
+                        focusing on performance and scalability.
+                    </motion.p>
+
+                    {/* Info Cards */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                        {aboutData.map((data, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.2 }}
+                                viewport={{ once: true }}
+                                whileHover={{ y: -5 }}
+                                className="relative group p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl shadow-cyan-500/5"
+                            >
+                                {/* Icon Circle */}
+                                <div className="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
+                                    {data.icon}
+                                </div>
+
+                                <h3 className="text-xl font-bold text-slate-100 mb-3 group-hover:text-cyan-400 transition-colors">
+                                    {data.title}
+                                </h3>
+
+                                <p className="text-slate-400 leading-relaxed text-sm">
+                                    {data.description}
+                                </p>
+
+                                {/* Decorative Corner */}
+                                <div className="absolute top-0 right-0 w-8 h-8 bg-cyan-500/5 rounded-tr-2xl rounded-bl-full" />
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Mobile CV Button */}
+                    <div className="flex lg:hidden justify-center pt-4">
+                        <motion.a
+                            href="Elora_Yasmin_CV.pdf"
+                            download
+                            className="btn border-0 bg-gradient-to-r from-cyan-600 to-cyan-500 rounded-full shadow-lg shadow-cyan-500/40 text-slate-950 font-bold px-10 py-4 flex items-center gap-2 hover:scale-105 active:scale-95 transition-transform"
+                        >
+                            My CV <LuDownload className="text-xl" />
+                        </motion.a>
+                    </div>
+
+                </div>
             </div>
         </section>
     );
