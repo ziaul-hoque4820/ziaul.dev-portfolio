@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 // icons
 import html from "../assets/skills/html-icon.png";
@@ -72,9 +73,13 @@ const Skills = () => {
 
             {/* Skills Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-center justify-center">
-                {filteredSkills.map((skill) => (
-                    <div
+                {filteredSkills.map((skill, index) => (
+                    <motion.div
                         key={skill.title}
+                        initial={{ opacity: 0.05, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.02 }}
                         className="bg-gray-900/60 p-5 rounded-xl border border-gray-700 hover:border-cyan-500/50 transition-all duration-300"
                     >
                         <div className="flex items-center gap-4 mb-3">
@@ -95,12 +100,14 @@ const Skills = () => {
 
                         {/* Progress bar */}
                         <div className="w-full bg-gray-800 rounded-full h-[6px] overflow-hidden">
-                            <div
-                                style={{ width: `${skill.level}%` }}
+                            <motion.div
+                                initial={{ width: 0 }}
+                                whileInView={{ width: `${skill.level}%` }}
+                                transition={{ duration: 0.8, delay: 0.5 + index * 0.05 }}
                                 className="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full"
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>
