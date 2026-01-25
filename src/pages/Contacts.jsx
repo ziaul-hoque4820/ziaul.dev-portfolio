@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import SectionTitle from "../shared/SectionTitle";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { FaRegUser, FaPaperPlane } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
@@ -8,10 +7,11 @@ import { useForm } from "@formspree/react";
 import { motion } from "framer-motion";
 import contact from "/public/contact.json";
 import Lottie from "lottie-react";
+import SectionTitle from "../shared/SectionTitle";
 
 const Contacts = () => {
     const formRef = useRef();
-    const [state, handleSubmit] = useForm("xyzjoeyn");
+    const [state, handleSubmit] = useForm("xgoagrvy");
     const [focusedField, setFocusedField] = useState(null);
 
     useEffect(() => {
@@ -34,9 +34,9 @@ const Contacts = () => {
     ];
 
     return (
-        <section id="contacts" className="my-24 md:my-32 text-sm max-w-6xl mx-auto px-4">
+        <section id="contacts" className="py-10 md:py-14 lg:py-20 max-w-6xl mx-auto px-4">
             <SectionTitle title={"Contacts"} />
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-12 py-5">
                 {/* Left: Contact Info */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
@@ -166,13 +166,14 @@ const Contacts = () => {
                     <motion.button
                         type="submit"
                         disabled={state.submitting}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="btn w-full bg-gradient-to-r from-cyan-600 to-cyan-500 border-0 text-slate-950 hover:shadow-lg hover:shadow-cyan-500/40 transition-all duration-300 flex items-center justify-center gap-2 font-medium"
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.96 }}
+                        transition={{ type: "spring", stiffness: 260 }}
+                        className="w-full btn border-cyan-400 bg-gradient-to-r from-cyan-600 to-cyan-400 hover:from-cyan-400 hover:to-cyan-600 hover:text-white text-slate-950 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-cyan-500/40 transition-all duration-500 px-8 py-4 disabled:opacity-60disabled:cursor-not-allowed"
                     >
                         {state.submitting ? (
                             <>
-                                <span className="loading loading-spinner loading-sm"></span>
+                                <span className="loading loading-spinner loading-sm" />
                                 Sending...
                             </>
                         ) : (
@@ -182,6 +183,8 @@ const Contacts = () => {
                             </>
                         )}
                     </motion.button>
+
+
                 </motion.form>
             </div>
         </section>
