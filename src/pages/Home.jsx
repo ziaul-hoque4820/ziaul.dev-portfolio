@@ -4,6 +4,7 @@ import About from './About'
 import Skills from './Skills'
 import Contacts from './Contacts'
 import { Toaster } from 'react-hot-toast'
+import ScrollUpButton from '../components/ScrollUpButton'
 
 function Home() {
     return (
@@ -12,6 +13,7 @@ function Home() {
             <About />
             <Skills />
             <Contacts />
+            <ScrollUpButton />
             <Toaster position="top-center" reverseOrder={false} toastOptions={{ style: { zIndex: 9999 } }} />
         </div>
     )
