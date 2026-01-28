@@ -3,6 +3,7 @@ import RootLayout from "../layout/RootLayout";
 import Home from "../pages/Home";
 import ProjectsLayout from "../layout/ProjectsLayout";
 import Loading from "../components/Loading";
+import ProjectsWithToggle from "../pages/projects";
 
 export const router = createBrowserRouter([
     {
@@ -18,6 +19,12 @@ export const router = createBrowserRouter([
     {
         path: "/projects",
         Component: ProjectsLayout,
-        hydrateFallbackElement: <Loading />
+        hydrateFallbackElement: <Loading />,
+        children: [
+            {
+                index: true,
+                element: <ProjectsWithToggle showAll={true} />
+            }
+        ]
     }
 ])

@@ -5,7 +5,7 @@ import Skills from './Skills'
 import Contacts from './Contacts'
 import { Toaster } from 'react-hot-toast'
 import ScrollUpButton from '../components/ScrollUpButton'
-import Projects from './projects'
+import Projects from './Projects'
 
 function Home() {
     return (
@@ -13,8 +13,8 @@ function Home() {
             <Banner />
             <About />
             <Skills />
+            <Projects showAll={false} />
             <Contacts />
-            <Projects />
             <ScrollUpButton />
             <Toaster position="top-center" reverseOrder={false} toastOptions={{ style: { zIndex: 9999 } }} />
         </div>
