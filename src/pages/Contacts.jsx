@@ -5,7 +5,7 @@ import { RiWhatsappFill } from "react-icons/ri";
 import toast from "react-hot-toast";
 import { useForm } from "@formspree/react";
 import { motion } from "framer-motion";
-import contact from "/public/contact.json";
+import contact from "../data/contact.json";
 import Lottie from "lottie-react";
 import SectionTitle from "../shared/SectionTitle";
 

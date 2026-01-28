@@ -37,12 +37,22 @@ const ProjectsLayout = () => {
                     {/* Back Button */}
                     <div className="pt-10">
                         <motion.button
-                            whileHover={{ scale: 1.03 }}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            whileHover={{
+                                boxShadow: "0 0 20px rgba(6, 182, 212, 0.5)",
+                                scale: 1.03
+                            }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => navigate("/")}
-                            className="btn btn-sm md:btn-md rounded-tl-2xl bg-gradient-to-r from-cyan-600 to-cyan-500 border-0 flex gap-1 md:ml-10 text-white"
+                            className="px-5 py-2 btn-sm md:btn-md rounded-tl-2xl rounded-br-2xl border-cyan-400 bg-gradient-to-r from-cyan-600 to-cyan-400 hover:from-cyan-400 hover:to-cyan-600 hover:text-white text-slate-950 font-bold flex items-center gap-2 shadow-lg shadow-cyan-500/40 transition-all duration-500 md:ml-10"
                         >
-                            <IoReturnUpBack size={20} />
+                            <motion.div
+                                animate={{ x: [-3, 0, -3] }}
+                                transition={{ repeat: Infinity, duration: 2 }}
+                            >
+                                <IoReturnUpBack size={20} className="font-bold" />
+                            </motion.div>
                             Go Back
                         </motion.button>
                     </div>
