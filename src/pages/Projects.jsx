@@ -2,51 +2,10 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowRight, FaGithub, FaExternalLinkAlt, FaTh, FaList } from "react-icons/fa";
 import { HiOutlineCode } from "react-icons/hi";
-import project1 from "../assets/projects/active-club.jpg";
-import project2 from "../assets/projects/food-mockup.jpg";
-import project3 from "../assets/projects/job_nest-mockup.png";
-import project4 from "../assets/projects/green_hub-mockup.png";
 import SectionTitle from "../shared/SectionTitle";
 import { Link } from "react-router";
+import { projects } from "../data/projects-data";
 
-const projects = [
-    {
-        image: project1,
-        name: "Active Club",
-        description:
-            "Active Club is a full-stack sports club management web application that allows users to view and book courts, participate in activities, and stay informed through announcements. Admins can manage courts, bookings, users, and important updates all in one place.",
-        live_link: "https://active-club-cb1de.web.app/",
-        github_link: "https://github.com/Elora21y/active-club",
-        technologies: ["React", "TailwindCSS", "React-router", "Express.js", "MongoDB", "Firebase"],
-    },
-    {
-        image: project2,
-        name: "Fresh Alert",
-        description:
-            "FreshAlert is a food sharing and management platform designed to reduce food waste by helping users post, find, and claim fresh and nearly expired food items.",
-        live_link: "https://food-expiry-tracker-2b052.web.app/",
-        github_link: "https://github.com/Elora21y/food-expiry-client",
-        technologies: ["React", "TailwindCSS", "Vite", "Express.js", "MongoDB", "Firebase"],
-    },
-    {
-        image: project3,
-        name: "Job Nest",
-        description:
-            "JobNest is an innovative and user-friendly website designed to help job seekers explore a wide variety of job opportunities across multiple companies.",
-        live_link: "https://jobnest-web.netlify.app/",
-        github_link: "https://github.com/Elora21y/job-nest",
-        technologies: ["React", "TailwindCSS", "Firebase", "Vite"],
-    },
-    {
-        image: project4,
-        name: "Green Hub",
-        description:
-            "The goal of GreenHub is to connect gardening enthusiasts, promote sustainable green practices, and create a space where people can learn from each other and grow their own mini green world — whether on a rooftop, balcony, or backyard.",
-        live_link: "https://green-hub-21ye.netlify.app/",
-        github_link: "https://github.com/Elora21y/green-hub",
-        technologies: ["React", "TailwindCSS", "Vite", "Express.js", "MongoDB", "Firebase"],
-    },
-];
 
 const ProjectsWithToggle = ({ showAll = true }) => {
     const [viewMode, setViewMode] = useState("grid");
