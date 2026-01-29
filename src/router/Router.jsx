@@ -3,7 +3,7 @@ import RootLayout from "../layout/RootLayout";
 import Home from "../pages/Home";
 import ProjectsLayout from "../layout/ProjectsLayout";
 import Loading from "../components/Loading";
-import ProjectsWithToggle from "../pages/projects";
+import ProjectsWithToggle from "../pages/Projects";
 
 export const router = createBrowserRouter([
     {

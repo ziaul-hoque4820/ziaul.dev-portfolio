@@ -45,7 +45,7 @@ const About = () => {
                 >
                     {/* Floating CV Button */}
                     <motion.a
-                        href="Elora_Yasmin_CV.pdf"
+                        href="#"
                         download
                         animate={{ y: [0, -25, 0] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
