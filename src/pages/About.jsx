@@ -45,7 +45,7 @@ const About = () => {
                 >
                     {/* Floating CV Button */}
                     <motion.a
-                        href="#"
+                        href="/ziaul-dev-cv.pdf"
                         download
                         animate={{ y: [0, -25, 0] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -126,7 +126,7 @@ const About = () => {
                     {/* Mobile CV Button */}
                     <div className="flex lg:hidden justify-center pt-4">
                         <motion.a
-                            href="#"
+                            href="/ziaul-dev-cv.pdf"
                             download
                             className="btn border-0 bg-gradient-to-r from-cyan-600 to-cyan-500 rounded-full shadow-lg shadow-cyan-500/40 text-slate-950 font-bold px-10 py-4 flex items-center gap-2 hover:scale-105 active:scale-95 transition-transform"
                         >

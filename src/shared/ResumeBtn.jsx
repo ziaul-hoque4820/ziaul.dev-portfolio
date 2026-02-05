@@ -5,7 +5,7 @@ import { LuDownload } from 'react-icons/lu';
 const ResumeBtn = () => {
     return (
         <motion.a
-            href="#"
+            href="/ziaul-dev-cv.pdf"
             download
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
